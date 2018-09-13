@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users followed by {{username}}</title>
+    <style type="text/css">
+        a:link {
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="font-size:130%; font-family:Verdana, sans-serif;">Users followed by {{username}}</h1>
+<table>
+    {% for n in userlist %}
+    <tr>
+        <td align=center width="80"><img src="{{n['image']}}"></td>
+        <td style="font-size:70%; font-family:Verdana, sans-serif">
+            <a href="https://twitter.com/{{n['screen_name']}}">{{n['name']}}</a><br>
+            {{n['followers']}} followers<br>
+            Since {{n['created']}}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
